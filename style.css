@@ -396,6 +396,7 @@ body {
     grid-template-columns: 102px 1fr;
     align-items: self-start;
     gap: 12px;
+    position: relative;
   }
   
   .phone-input__country {

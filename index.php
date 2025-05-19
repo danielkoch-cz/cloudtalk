@@ -92,8 +92,8 @@
 
                 <ul class="phone-input__dropdown" id="phone-dropdown-0" role="listbox" hidden>
                     <li class="phone-input__option" data-code="+61" data-label="AU" tabindex="0" role="option">
-                        <img src="http://danielkoch.cz/wp-content/uploads/2025/05/czech-republic.svg"
-                            alt="Australia flag" class="phone-input__flag" />
+                        <img src="http://danielkoch.cz/wp-content/uploads/2025/05/australia.svg" alt="Australia flag"
+                            class="phone-input__flag" />
                         Australia (+61)
                     </li>
                     <li class="phone-input__option" data-code="+420" data-label="CZ" tabindex="0" role="option">
@@ -102,12 +102,12 @@
                         Czech Republic (+420)
                     </li>
                     <li class="phone-input__option" data-code="+33" data-label="FR" tabindex="0" role="option">
-                        <img src="http://danielkoch.cz/wp-content/uploads/2025/05/czech-republic.svg" alt="France flag"
+                        <img src="http://danielkoch.cz/wp-content/uploads/2025/05/france.svg" alt="France flag"
                             class="phone-input__flag" />
                         France (+33)
                     </li>
                     <li class="phone-input__option" data-code="+49" data-label="DE" tabindex="0" role="option">
-                        <img src="http://danielkoch.cz/wp-content/uploads/2025/05/czech-republic.svg" alt="Germany flag"
+                        <img src="http://danielkoch.cz/wp-content/uploads/2025/05/germany.svg" alt="Germany flag"
                             class="phone-input__flag" />
                         Germany (+49)
                     </li>
