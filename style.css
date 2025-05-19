@@ -300,13 +300,12 @@ body {
 }
 
 .trial-form__select {
+    color: var(--color-text-tertiary);
     width: 100%;
     padding: 12px 16px;
     border-radius: 8px;
     border: 1px solid var(--color-border);
-    font-family: var(--font-base);
     font-size: 16px;
-    color: var(--color-text-primary);
     box-shadow: var(--shadow-xs);
     background-color: var(--color-bg);
     background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%23717680' stroke-width='1.66667' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
@@ -342,35 +341,45 @@ body {
     margin-bottom: 4px; 
 }
 
+.trial-form__columns {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+    "first-name"
+    "last-name"
+    "email"
+    "password"
+    "users";
+}
+
+.trial-form__input--first-name {
+    grid-area: first-name;
+}
+
+.trial-form__input--last-name {
+    grid-area: last-name;
+}
+
+.trial-form__input--email {
+    grid-area: email;
+}
+
+.trial-form__input__group--password {
+    grid-area: password;
+}
+
+.trial-form__select--users {
+    grid-area: users;
+}
+
 @media screen and (min-width: 990px) {
     .trial-form__columns {
-        display: grid;
         grid-template-areas:
             "first-name last-name"
             "email users"
             "password password";
         grid-template-columns: 1fr 1fr;
         gap: 0 16px;
-    }
-
-    .trial-form__input--first-name {
-        grid-area: first-name;
-    }
-
-    .trial-form__input--last-name {
-        grid-area: last-name;
-    }
-    
-    .trial-form__input--email {
-        grid-area: email;
-    }
-
-    .trial-form__input__group--password {
-        grid-area: password;
-    }
-
-    .trial-form__select--users {
-        grid-area: users;
     }
 }
 
@@ -391,7 +400,7 @@ body {
     justify-content: space-between;
     padding: 0.5rem 0.75rem;
     border: 1px solid var(--color-border);
-    border-radius: var(--radius);
+    border-radius: 8px;
     background: #fff;
     cursor: pointer;
     font-size: 0.95rem;

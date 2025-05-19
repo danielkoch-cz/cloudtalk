@@ -68,18 +68,18 @@
                     placeholder="Last name *" required />
                 <input type="email" name="email" class="trial-form__input trial-form__input--email"
                     placeholder="Company email *" required />
-                <div class="trial-form__input__group trial-form__input__group--password">
-                    <input type="password" name="password" class="trial-form__input trial-form__input--password"
-                        placeholder="Password *" required aria-describedby="passwordHelp" />
-                    <small class="trial-form__password-help" id="passwordHelp">Password must contain 1 small letter, 1
-                        capital letter, 1 number.</small>
-                </div>
                 <select name="users" class="trial-form__select trial-form__select--users" required>
                     <option value="">Number of users</option>
                     <option value="1">1</option>
                     <option value="2-10">2–10</option>
                     <option value="10+">10+</option>
                 </select>
+                <div class="trial-form__input__group trial-form__input__group--password">
+                    <input type="password" name="password" class="trial-form__input trial-form__input--password"
+                        placeholder="Password *" required aria-describedby="passwordHelp" />
+                    <small class="trial-form__password-help" id="passwordHelp">Password must contain 1 small letter, 1
+                        capital letter, 1 number.</small>
+                </div>
             </div>
             <div class="phone-input phone-input--instance-0">
                 <div class="phone-input__country" tabindex="0" role="combobox" aria-haspopup="listbox"
