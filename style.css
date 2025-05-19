@@ -51,23 +51,31 @@ body {
     position: relative;
 }
 
-@media screen and (min-width: 990px) and (max-height: 900px) {
-    .main {
-        background-image: url(http://danielkoch.cz/wp-content/uploads/2025/05/cloudtalk-bg.jpg);
-        background-size: 100%;
-        background-position: top left;
-        background-repeat: no-repeat;
-        z-index: -2;
-    }
-}
-
 @media screen and (min-width: 990px) {
     .main {
         justify-content: center;
     }
 }
 
-.main::after {
+.main__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+}
+
+@media screen and (min-width: 990px) and (max-height: 900px) {
+    .main__bg {
+       background-image: url(http://danielkoch.cz/wp-content/uploads/2025/05/cloudtalk-bg.jpg);
+        background-size: 100%;
+        background-position: top left;
+        background-repeat: no-repeat;
+    }
+}
+
+.main__bg::after {
     content: "";
     position: absolute;
     top: 0;
@@ -79,7 +87,7 @@ body {
 }
 
 @media screen and (min-width: 990px) {
-    .main::after {
+    .main__bg::after {
         background: linear-gradient(180deg, rgba(255, 255, 255, 0.6) -14.08%, #0527FF 101.63%);
     }
 }
@@ -125,7 +133,7 @@ body {
         box-shadow: var(--shadow-xs);
         border: 1px solid var(--color-border);
         padding: 0;
-        margin-top: 106px 0 32px;
+        margin: 106px 0 32px;
     }
 }
 
