@@ -125,7 +125,7 @@ body {
         box-shadow: var(--shadow-xs);
         border: 1px solid var(--color-border);
         padding: 0;
-        margin-top: 74px;
+        margin-top: 106px 0 32px;
     }
 }
 
@@ -524,5 +524,5 @@ body {
 }
 
 .trial-form__button:hover {
-    background-color: var(--color-primary-dark);
+    opacity: 0.8;
 }
