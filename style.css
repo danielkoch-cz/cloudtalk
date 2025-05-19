@@ -433,7 +433,6 @@ body {
     left: 0;
     width: 100%;
     z-index: 20;
-    margin-top: 0.25rem;
     border: 1px solid var(--color-border);
     border-radius: var(--radius);
     background: #fff;

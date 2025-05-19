@@ -45,6 +45,11 @@ class CountrySelect {
 
     this.highlightedIndex = -1;
 
+    // Set initial tabindex for options
+    this.options.forEach((option, index) => {
+      option.setAttribute("tabindex", "-1");
+    });
+
     this.bindEvents();
   }
 
@@ -147,10 +152,19 @@ class CountrySelect {
   openDropdown() {
     this.trigger.setAttribute("aria-expanded", "true");
     this.dropdown.hidden = false;
-    // Set initial highlight if none is set
-    if (this.highlightedIndex === -1) {
-      this.moveHighlight(0);
-    }
+
+    // Find the currently selected option or default to first
+    const currentLabel = this.label.textContent;
+    const currentIndex = this.options.findIndex(
+      (opt) => opt.dataset.label === currentLabel
+    );
+    this.highlightedIndex = currentIndex >= 0 ? currentIndex : 0;
+
+    // Set initial highlight
+    this.clearHighlight();
+    this.options[this.highlightedIndex].classList.add(
+      "phone-input__option--highlighted"
+    );
   }
 
   closeDropdown() {
