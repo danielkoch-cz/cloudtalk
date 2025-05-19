@@ -40,7 +40,7 @@
             </defs>
         </svg>
     </div>
-    <form class="trial-form" novalidate>
+    <form class="trial-form" novalidate aria-label="Free Trial Registration Form">
         <div class="trial-form__header">
             <h1 class="trial-form__heading">👋 14-Day Free Trial</h1>
             <ul class="trial-form__benefits">
@@ -58,75 +58,110 @@
                 data-poster="https://www.cloudtalk.io/wp-content/uploads/2024/10/photo-wave-celia-bruche-placeholder.png"
                 data-ll-status="loaded"
                 poster="https://www.cloudtalk.io/wp-content/uploads/2024/10/photo-wave-celia-bruche-placeholder.png"
-                src="https://www.cloudtalk.io/wp-content/uploads/2024/10/video-wave-celia-bruche.mp4"></video>
+                src="https://www.cloudtalk.io/wp-content/uploads/2024/10/video-wave-celia-bruche.mp4"
+                aria-hidden="true"></video>
         </div>
         <div class="trial-form__grid">
             <div class="trial-form__columns">
-                <input type="text" name="firstName" class="trial-form__input trial-form__input--first-name"
-                    placeholder="First name *" required minlength="2" />
-                <input type="text" name="lastName" class="trial-form__input trial-form__input--last-name"
-                    placeholder="Last name *" required minlength="2" />
-                <input type="email" name="email" class="trial-form__input trial-form__input--email"
-                    placeholder="Company email *" required />
-                <select name="users" class="trial-form__select trial-form__select--users" required>
-                    <option value="">Number of users</option>
-                    <option value="1">1</option>
-                    <option value="2-10">2–10</option>
-                    <option value="10+">10+</option>
-                </select>
-                <div class="trial-form__input__group trial-form__input__group--password">
-                    <input type="password" name="password" class="trial-form__input trial-form__input--password"
-                        placeholder="Password *" required aria-describedby="passwordHelp" />
+                <div class="trial-form__field">
+                    <label for="firstName" class="trial-form__label">First name</label>
+                    <input type="text" id="firstName" name="firstName"
+                        class="trial-form__input trial-form__input--first-name" placeholder="First name *" required
+                        minlength="2" aria-required="true" aria-invalid="false" />
+                    <div class="trial-form__error" id="firstName-error" role="alert" aria-live="polite"></div>
+                </div>
+
+                <div class="trial-form__field">
+                    <label for="lastName" class="trial-form__label">Last name</label>
+                    <input type="text" id="lastName" name="lastName"
+                        class="trial-form__input trial-form__input--last-name" placeholder="Last name *" required
+                        minlength="2" aria-required="true" aria-invalid="false" />
+                    <div class="trial-form__error" id="lastName-error" role="alert" aria-live="polite"></div>
+                </div>
+
+                <div class="trial-form__field">
+                    <label for="email" class="trial-form__label">Company email</label>
+                    <input type="email" id="email" name="email" class="trial-form__input trial-form__input--email"
+                        placeholder="Company email *" required aria-required="true" aria-invalid="false" />
+                    <div class="trial-form__error" id="email-error" role="alert" aria-live="polite"></div>
+                </div>
+
+                <div class="trial-form__field">
+                    <label for="users" class="trial-form__label">Number of users</label>
+                    <select id="users" name="users" class="trial-form__select trial-form__select--users" required
+                        aria-required="true" aria-invalid="false">
+                        <option value="">Select number of users</option>
+                        <option value="1">1</option>
+                        <option value="2-10">2–10</option>
+                        <option value="10+">10+</option>
+                    </select>
+                    <div class="trial-form__error" id="users-error" role="alert" aria-live="polite"></div>
+                </div>
+
+                <div class="trial-form__field trial-form__input__group trial-form__input__group--password">
+                    <label for="password" class="trial-form__label">Password</label>
+                    <input type="password" id="password" name="password"
+                        class="trial-form__input trial-form__input--password" placeholder="Password *" required
+                        aria-required="true" aria-invalid="false" aria-describedby="passwordHelp password-error" />
                     <small class="trial-form__password-help" id="passwordHelp">Password must contain 1 small letter, 1
                         capital letter, 1 number.</small>
+                    <div class="trial-form__error" id="password-error" role="alert" aria-live="polite"></div>
                 </div>
             </div>
+
             <div class="phone-input phone-input--instance-0">
+                <label for="phone" class="trial-form__label">Phone number</label>
                 <div class="phone-input__country" tabindex="0" role="combobox" aria-haspopup="listbox"
-                    aria-expanded="false" aria-controls="phone-dropdown-0">
+                    aria-expanded="false" aria-controls="phone-dropdown-0" aria-label="Select country code">
                     <img src="http://danielkoch.cz/wp-content/uploads/2025/05/czech-republic.svg"
                         alt="Czech Republic flag" class="phone-input__flag" />
                     <span class="phone-input__label">CZ</span>
-                    <span class="phone-input__arrow">▾</span>
+                    <span class="phone-input__arrow" aria-hidden="true">▾</span>
                 </div>
 
-                <ul class="phone-input__dropdown" id="phone-dropdown-0" role="listbox" hidden>
-                    <li class="phone-input__option" data-code="+61" data-label="AU" role="option">
+                <ul class="phone-input__dropdown" id="phone-dropdown-0" role="listbox" hidden
+                    aria-label="Country codes">
+                    <li class="phone-input__option" data-code="+61" data-label="AU" role="option" aria-selected="false">
                         <img src="http://danielkoch.cz/wp-content/uploads/2025/05/australia.svg" alt="Australia flag"
                             class="phone-input__flag" />
                         Australia (+61)
                     </li>
-                    <li class="phone-input__option" data-code="+420" data-label="CZ" role="option">
+                    <li class="phone-input__option" data-code="+420" data-label="CZ" role="option" aria-selected="true">
                         <img src="http://danielkoch.cz/wp-content/uploads/2025/05/czech-republic.svg"
                             alt="Czech Republic flag" class="phone-input__flag" />
                         Czech Republic (+420)
                     </li>
-                    <li class="phone-input__option" data-code="+33" data-label="FR" role="option">
+                    <li class="phone-input__option" data-code="+33" data-label="FR" role="option" aria-selected="false">
                         <img src="http://danielkoch.cz/wp-content/uploads/2025/05/france.svg" alt="France flag"
                             class="phone-input__flag" />
                         France (+33)
                     </li>
-                    <li class="phone-input__option" data-code="+49" data-label="DE" role="option">
+                    <li class="phone-input__option" data-code="+49" data-label="DE" role="option" aria-selected="false">
                         <img src="http://danielkoch.cz/wp-content/uploads/2025/05/germany.svg" alt="Germany flag"
                             class="phone-input__flag" />
                         Germany (+49)
                     </li>
                 </ul>
 
-                <input type="tel" name="phone" class="trial-form__input phone-input__number" placeholder="+420" required
-                    minlength="6" />
+                <input type="tel" id="phone" name="phone" class="trial-form__input phone-input__number"
+                    placeholder="+420" required minlength="6" aria-required="true" aria-invalid="false"
+                    aria-describedby="phone-error" />
                 <input type="hidden" name="country_code" class="phone-input__hidden" value="+420" required />
+                <div class="trial-form__error" id="phone-error" role="alert" aria-live="polite"></div>
             </div>
 
-            <label class="trial-form__checkbox">
-                <input type="checkbox" required />
-                <span>
-                    I have read and agree to the <a href="https://www.cloudtalk.io/terms-and-conditions/" class="link"
-                        target="_blank">Terms and Conditions</a>
-                </span>
-            </label>
+            <div class="trial-form__field">
+                <label class="trial-form__checkbox">
+                    <input type="checkbox" required aria-required="true" aria-invalid="false" />
+                    <span>
+                        I have read and agree to the <a href="https://www.cloudtalk.io/terms-and-conditions/"
+                            class="link" target="_blank" rel="noopener noreferrer">Terms and Conditions</a>
+                    </span>
+                </label>
+                <div class="trial-form__error" id="terms-error" role="alert" aria-live="polite"></div>
+            </div>
 
-            <button type="submit" class="trial-form__button">Start a free trial</button>
+            <button type="submit" class="trial-form__button" aria-label="Start free trial">Start a free trial</button>
         </div>
     </form>
 </main>
