@@ -221,4 +221,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Update tab order on window resize
   window.addEventListener("resize", updateFormTabOrder);
+
+  // Handle form submission
+  const form = document.querySelector(".trial-form");
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const formData = new FormData(form);
+    console.log(Object.fromEntries(formData));
+  });
 });
