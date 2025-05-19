@@ -1,0 +1,24 @@
+/*
+Theme Name: Cloudtalk Form
+Theme URI: 
+Author: Daniel Koch
+Author URI: 
+Description: A simple landing page theme
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: simple-landing
+*/
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
