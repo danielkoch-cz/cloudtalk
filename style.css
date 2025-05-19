@@ -179,6 +179,12 @@ body {
     z-index: 1;
 }
 
+@media screen and (min-width: 990px) {
+    .trial-form__gif {
+        gap: 0;
+    }
+}
+
 .trial-form__gif video {
     width: 68px;
     height: 68px;
@@ -205,11 +211,17 @@ body {
     top: -8px;
 }
 
+@media screen and (min-width: 990px) {
+    .trial-form__gif__text {
+        margin-right: -6px;
+    }
+}
+
 .trial-form__gif__text::before {
     content: "";
     position: absolute;
     top: 50%;
-    right: -8px;
+    right: -6px;
     width: 0;
     height: 0;
     border-top: 12px solid transparent;
