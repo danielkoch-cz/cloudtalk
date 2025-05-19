@@ -486,7 +486,7 @@ body {
     background-color: #fff;
     transition: all 0.2s ease;
     flex-shrink: 0;
-    top: 2px;
+    top: 4px;
   }
   
   .trial-form__checkbox input[type="checkbox"]:checked {
