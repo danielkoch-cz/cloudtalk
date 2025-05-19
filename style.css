@@ -242,6 +242,7 @@ body {
     .trial-form__gif__text {
         margin-right: -6px;
         top: -12px;
+        font-size: 12px;
     }
 }
 
