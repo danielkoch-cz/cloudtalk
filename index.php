@@ -49,6 +49,17 @@
                 <li>No credit card required</li>
             </ul>
         </div>
+        <div class="trial-form__gif">
+            <div class="trial-form__gif__text">
+                <strong>Hello!</strong> Fill out the form; it only takes a minute.
+            </div>
+            <video autoplay="" loop="" muted="" playsinline=""
+                data-src="https://www.cloudtalk.io/wp-content/uploads/2024/10/video-wave-celia-bruche.mp4"
+                data-poster="https://www.cloudtalk.io/wp-content/uploads/2024/10/photo-wave-celia-bruche-placeholder.png"
+                data-ll-status="loaded"
+                poster="https://www.cloudtalk.io/wp-content/uploads/2024/10/photo-wave-celia-bruche-placeholder.png"
+                src="https://www.cloudtalk.io/wp-content/uploads/2024/10/video-wave-celia-bruche.mp4"></video>
+        </div>
         <div class="trial-form__grid">
             <input type="text" name="firstName" class="trial-form__input" placeholder="First name*" required />
             <input type="text" name="lastName" class="trial-form__input" placeholder="Last name*" required />
