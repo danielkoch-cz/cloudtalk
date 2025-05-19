@@ -456,6 +456,11 @@ body {
 
   .link {
     color: var(--color-primary);
+    text-decoration: none;
+  }
+
+  .link:hover {
+    text-decoration: underline;
   }
   
   .trial-form__checkbox {

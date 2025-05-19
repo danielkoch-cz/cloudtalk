@@ -121,7 +121,8 @@
             <label class="trial-form__checkbox">
                 <input type="checkbox" required />
                 <span>
-                    I have read and agree to the <a href="#" class="link">Terms and Conditions</a>
+                    I have read and agree to the <a href="https://www.cloudtalk.io/terms-and-conditions/" class="link"
+                        target="_blank">Terms and Conditions</a>
                 </span>
             </label>
 
