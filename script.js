@@ -81,6 +81,34 @@ class CountrySelect {
       }
     });
 
+    // Add keyboard navigation for dropdown options
+    this.dropdown.addEventListener("keydown", (e) => {
+      switch (e.key) {
+        case "ArrowDown":
+          e.preventDefault();
+          this.moveHighlight(1);
+          break;
+        case "ArrowUp":
+          e.preventDefault();
+          this.moveHighlight(-1);
+          break;
+        case "Enter":
+        case " ":
+          e.preventDefault();
+          if (this.highlightedIndex > -1) {
+            this.selectOption(this.options[this.highlightedIndex]);
+          }
+          break;
+        case "Escape":
+          e.preventDefault();
+          this.closeDropdown();
+          break;
+        case "Tab":
+          this.closeDropdown();
+          break;
+      }
+    });
+
     // Close dropdown if user tabs away from trigger
     this.trigger.addEventListener("blur", (e) => {
       setTimeout(() => {
@@ -93,6 +121,11 @@ class CountrySelect {
     // Mouse selection
     this.options.forEach((option) => {
       option.addEventListener("click", () => this.selectOption(option));
+      option.addEventListener("mouseenter", () => {
+        this.highlightedIndex = this.options.indexOf(option);
+        this.clearHighlight();
+        option.classList.add("phone-input__option--highlighted");
+      });
     });
 
     // Close when clicking outside
@@ -114,12 +147,17 @@ class CountrySelect {
   openDropdown() {
     this.trigger.setAttribute("aria-expanded", "true");
     this.dropdown.hidden = false;
+    // Set initial highlight if none is set
+    if (this.highlightedIndex === -1) {
+      this.moveHighlight(0);
+    }
   }
 
   closeDropdown() {
     this.trigger.setAttribute("aria-expanded", "false");
     this.dropdown.hidden = true;
     this.clearHighlight();
+    this.highlightedIndex = -1;
   }
 
   selectOption(option) {
@@ -134,6 +172,7 @@ class CountrySelect {
     this.hiddenInput.value = code;
 
     this.closeDropdown();
+    this.trigger.focus();
   }
 
   moveHighlight(direction) {
