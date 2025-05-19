@@ -111,12 +111,10 @@
 
             <div class="phone-input phone-input--instance-0">
                 <label for="phone" class="trial-form__label">Phone number</label>
-                <div class="phone-input__country" tabindex="0" role="combobox" aria-haspopup="listbox"
-                    aria-expanded="false" aria-controls="phone-dropdown-0" aria-label="Select country code">
-                    <img src="http://danielkoch.cz/wp-content/uploads/2025/05/czech-republic.svg"
-                        alt="Czech Republic flag" class="phone-input__flag" />
+                <div class="phone-input__country" tabindex="0" role="combobox" aria-haspopup="listbox" aria-expanded="false" aria-controls="phone-dropdown-0" aria-label="Select country code">
+                    <img src="http://danielkoch.cz/wp-content/uploads/2025/05/czech-republic.svg" alt="Czech Republic flag" class="phone-input__flag" />
                     <span class="phone-input__label">CZ</span>
-                    <span class="phone-input__arrow" aria-hidden="true">▾</span>
+                    <span class="phone-input__arrow" aria-hidden="true"></span>
                 </div>
 
                 <ul class="phone-input__dropdown" id="phone-dropdown-0" role="listbox" hidden
