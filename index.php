@@ -84,27 +84,32 @@
             <div class="phone-input phone-input--instance-0">
                 <div class="phone-input__country" tabindex="0" role="combobox" aria-haspopup="listbox"
                     aria-expanded="false" aria-controls="phone-dropdown-0">
-                    <img src="flags/as.svg" alt="American Samoa flag" class="phone-input__flag" />
-                    <span class="phone-input__label">AS</span>
+                    <img src="http://danielkoch.cz/wp-content/uploads/2025/05/czech-republic.svg"
+                        alt="Czech Republic flag" class="phone-input__flag" />
+                    <span class="phone-input__label">CZ</span>
                     <span class="phone-input__arrow">▾</span>
                 </div>
 
                 <ul class="phone-input__dropdown" id="phone-dropdown-0" role="listbox" hidden>
-                    <li class="phone-input__option" data-code="+93" data-label="AF" tabindex="0" role="option">
-                        <img src="flags/af.svg" alt="Afghanistan flag" class="phone-input__flag" />
-                        Afghanistan (+93)
+                    <li class="phone-input__option" data-code="+61" data-label="AU" tabindex="0" role="option">
+                        <img src="http://danielkoch.cz/wp-content/uploads/2025/05/czech-republic.svg"
+                            alt="Australia flag" class="phone-input__flag" />
+                        Australia (+61)
                     </li>
-                    <li class="phone-input__option" data-code="+355" data-label="AL" tabindex="0" role="option">
-                        <img src="flags/al.svg" alt="Albania flag" class="phone-input__flag" />
-                        Albania (+355)
+                    <li class="phone-input__option" data-code="+420" data-label="CZ" tabindex="0" role="option">
+                        <img src="http://danielkoch.cz/wp-content/uploads/2025/05/czech-republic.svg"
+                            alt="Czech Republic flag" class="phone-input__flag" />
+                        Czech Republic (+420)
                     </li>
-                    <li class="phone-input__option" data-code="+213" data-label="DZ" tabindex="0" role="option">
-                        <img src="flags/dz.svg" alt="Algeria flag" class="phone-input__flag" />
-                        Algeria (+213)
+                    <li class="phone-input__option" data-code="+33" data-label="FR" tabindex="0" role="option">
+                        <img src="http://danielkoch.cz/wp-content/uploads/2025/05/czech-republic.svg" alt="France flag"
+                            class="phone-input__flag" />
+                        France (+33)
                     </li>
-                    <li class="phone-input__option" data-code="+1684" data-label="AS" tabindex="0" role="option">
-                        <img src="flags/as.svg" alt="American Samoa flag" class="phone-input__flag" />
-                        American Samoa (+1684)
+                    <li class="phone-input__option" data-code="+49" data-label="DE" tabindex="0" role="option">
+                        <img src="http://danielkoch.cz/wp-content/uploads/2025/05/czech-republic.svg" alt="Germany flag"
+                            class="phone-input__flag" />
+                        Germany (+49)
                     </li>
                 </ul>
 
