@@ -21,9 +21,14 @@ Text Domain: simple-landing
     --color-primary: #0420D5;
     --color-bg: #FFFFFF;
     --color-border: #D5D7DA;
-    --color-text: #222;
+    --color-bg-primary: #0420D5;
+    --color-text-primary: #181D27;
+    --color-text-secondary: #414651;
+    --color-text-tertiary: #535862;
+    --color-text-placeholder: #717680;
     --radius: 8px;
     --gap: 1rem;
+    --gap-small: 0.5rem;
     --font-base: 'Inter', sans-serif;
   }
 
@@ -47,6 +52,7 @@ body {
         background-size: cover;
         background-position: top;
         background-repeat: no-repeat;
+        z-index: -2;
     }
 }
 
@@ -57,111 +63,66 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.6) -14.08%, #0527FF 101.63%);
-    z-index: 1;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.6) 23.65%, #0527FF 101.63%);
+    z-index: -1;
 }
 
+@media screen and (min-width: 990px) {
+    .main::after {
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.6) -14.08%, #0527FF 101.63%);
+    }
+}
 
-  
-  .trial-form {
-    background-color: #fff;
-    padding: 2rem;
-    border-radius: var(--radius);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    max-width: 440px;
+.logo {
+    background: var(--color-bg);
+    padding: 32px 16px;
     width: 100%;
-    z-index: 2;
-  }
-  
-  .trial-form__heading {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-    text-align: center;
-  }
-  
-  .trial-form__benefits {
-    list-style: none;
     display: flex;
     justify-content: center;
-    gap: var(--gap);
-    margin-bottom: 2rem;
-    padding: 0;
-  }
-  
-  .trial-form__grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--gap);
-  }
-  
-  .trial-form__input,
-  .trial-form__select,
-  .trial-form__button {
-    grid-column: span 2;
-    display: block;
-    width: 100%;
-    padding: 0.75rem;
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius);
-  }
-  
-  .trial-form__button {
-    background: var(--color-primary);
-    color: #fff;
-    font-weight: bold;
-    cursor: pointer;
-  }
-  
-  .trial-form__checkbox {
-    grid-column: span 2;
-    font-size: 0.9rem;
-  }
-  
-  .trial-form__disclaimer {
-    font-size: 0.75rem;
-    color: #666;
-    margin-top: 1rem;
-    text-align: center;
-  }
-  
-  .phone-input {
-    position: relative;
-    display: flex;
-    grid-column: span 2;
-    gap: 0.5rem;
-    flex-direction: column;
-  }
-  
-  .phone-input__country {
-    cursor: pointer;
+    border-bottom: 1px solid var(--color-border);
+}
+
+@media screen and (min-width: 990px) {
+    .logo {
+        display: none;
+    }
+}
+
+.trial-form__header {
+    text-align: center; 
+    padding: 32px 16px;
+}
+
+.trial-form__heading {
+    font-family: var(--font-base);
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: 8px;
+}
+
+.trial-form__benefits {
     display: flex;
     align-items: center;
-    padding: 0.5rem;
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius);
-    background: #fff;
-  }
-  
-  .phone-input__flag {
-    width: 20px;
-    height: 14px;
-    margin-right: 0.5rem;
-  }
-  
-  .phone-input__dropdown {
+    gap: 12px;
+    list-style-type: none;
+    justify-content: center;
+    color: var(--color-text-secondary);
+}
+
+.trial-form__benefits li {
+    position: relative;
+    padding-left: 16px;
+}
+
+.trial-form__benefits li::before {
+    content: "";
     position: absolute;
-    top: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg width='11' height='9' viewBox='0 0 11 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.1666 1.5L3.74992 7.91667L0.833252 5' stroke='%23414651' stroke-width='1.16667' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 10px;
+    height: 10px;
     left: 0;
-    background: #fff;
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius);
-    width: 100%;
-    z-index: 10;
-    max-height: 200px;
-    overflow-y: auto;
-  }
-  
-  .phone-input__option {
-    padding: 0.5rem;
-    cursor: pointer;
-  }
+    top: 50%;
+    transform: translateY(-50%);
+}

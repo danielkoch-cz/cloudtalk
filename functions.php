@@ -32,3 +32,9 @@ function simple_landing_scripts() {
     wp_enqueue_script('simple-landing-script', get_template_directory_uri() . '/script.js', array('jquery'), '1.0.0', true);
 }
 add_action('wp_enqueue_scripts', 'simple_landing_scripts'); 
+
+// Disable WordPress admin bar for all users
+function disable_admin_bar() {
+    return false;
+}
+add_filter('show_admin_bar', 'disable_admin_bar');
