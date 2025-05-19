@@ -17,8 +17,151 @@ Text Domain: simple-landing
     box-sizing: border-box;
 }
 
+:root {
+    --color-primary: #0420D5;
+    --color-bg: #FFFFFF;
+    --color-border: #D5D7DA;
+    --color-text: #222;
+    --radius: 8px;
+    --gap: 1rem;
+    --font-base: 'Inter', sans-serif;
+  }
+
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
     color: #333;
 }
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+}
+
+@media screen and (min-width: 990px) and (max-height: 650px) {
+    .main {
+        background-image: url(http://danielkoch.cz/wp-content/uploads/2025/05/cloudtalk-bg.jpg);
+        background-size: cover;
+        background-position: top;
+        background-repeat: no-repeat;
+    }
+}
+
+.main::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.6) -14.08%, #0527FF 101.63%);
+    z-index: 1;
+}
+
+
+  
+  .trial-form {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: var(--radius);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    max-width: 440px;
+    width: 100%;
+    z-index: 2;
+  }
+  
+  .trial-form__heading {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+  }
+  
+  .trial-form__benefits {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: var(--gap);
+    margin-bottom: 2rem;
+    padding: 0;
+  }
+  
+  .trial-form__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--gap);
+  }
+  
+  .trial-form__input,
+  .trial-form__select,
+  .trial-form__button {
+    grid-column: span 2;
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+  }
+  
+  .trial-form__button {
+    background: var(--color-primary);
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .trial-form__checkbox {
+    grid-column: span 2;
+    font-size: 0.9rem;
+  }
+  
+  .trial-form__disclaimer {
+    font-size: 0.75rem;
+    color: #666;
+    margin-top: 1rem;
+    text-align: center;
+  }
+  
+  .phone-input {
+    position: relative;
+    display: flex;
+    grid-column: span 2;
+    gap: 0.5rem;
+    flex-direction: column;
+  }
+  
+  .phone-input__country {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    background: #fff;
+  }
+  
+  .phone-input__flag {
+    width: 20px;
+    height: 14px;
+    margin-right: 0.5rem;
+  }
+  
+  .phone-input__dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #fff;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    width: 100%;
+    z-index: 10;
+    max-height: 200px;
+    overflow-y: auto;
+  }
+  
+  .phone-input__option {
+    padding: 0.5rem;
+    cursor: pointer;
+  }
