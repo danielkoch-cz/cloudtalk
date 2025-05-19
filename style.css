@@ -32,7 +32,9 @@ Text Domain: simple-landing
     --gap: 1rem;
     --gap-small: 0.5rem;
     --font-base: 'Inter', sans-serif;
-    --font-secondary: 'Arial', sans-serif;
+    --font-secondary: 'Arial', sans-serif; 
+    --shadow-xs: 0px 1px 2px 0px #0A0D120D;
+
   }
 
 body {
@@ -104,6 +106,7 @@ body {
         "header"
         "gif"
         "grid";
+    color: var(--color-text-tertiary);
 }
 
 @media screen and (min-width: 990px) {
@@ -271,10 +274,27 @@ body {
 
 .trial-form__input {
     width: 100%;
-    padding: 16px;
-    border-radius: var(--radius);
+    padding: 12px 16px;
+    border-radius: 8px;
     border: 1px solid var(--color-border);
     font-family: var(--font-base);
     font-size: 16px;
     color: var(--color-text-primary);
+    box-shadow: var(--shadow-xs);
+}
+
+.trial-form__input:focus {
+    border-color: 2px solid var(--color-primary);
+}
+
+.trial-form__grid .trial-form__input {
+    margin-bottom: 12px;
+}
+
+@media screen and (min-width: 990px) {
+    .trial-form__column {
+       display: grid;
+       grid-template-columns: 1fr 1fr;
+       gap: 16px;
+    }
 }
