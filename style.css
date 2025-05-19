@@ -99,9 +99,24 @@ body {
 
 .trial-form {
     padding: 32px 16px;
+    display: grid;
+    grid-template-areas:
+        "header"
+        "gif"
+        "grid";
+}
+
+@media screen and (min-width: 990px) {
+    .trial-form {
+        grid-template-areas:
+            "gif"
+            "header"
+            "grid";
+    }
 }
 
 .trial-form__header {
+    grid-area: header;
     text-align: center; 
     margin-bottom: 16px;
 }
@@ -155,11 +170,13 @@ body {
 }
 
 .trial-form__gif {
+    grid-area: gif;
     display: flex;
     align-items: center;
     justify-content: flex-end;
     gap: 24px;
     padding: 0 16px;
+    z-index: 1;
 }
 
 .trial-form__gif video {
@@ -202,6 +219,7 @@ body {
 }
 
 .trial-form__grid {
+    grid-area: grid;
     margin-top: -12px;
     padding: 16px;
     background: var(--color-bg);
