@@ -226,6 +226,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const form = document.querySelector(".trial-form");
   form.addEventListener("submit", (e) => {
     e.preventDefault();
+
+    // Check if form is valid
+    if (!form.checkValidity()) {
+      // Trigger browser's default validation UI
+      form.reportValidity();
+      return;
+    }
+
+    // If form is valid, proceed with submission
     const formData = new FormData(form);
     console.log(Object.fromEntries(formData));
   });
