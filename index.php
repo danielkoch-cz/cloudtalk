@@ -67,7 +67,7 @@
                 <input type="text" name="lastName" class="trial-form__input trial-form__input--last-name"
                     placeholder="Last name *" required minlength="2" />
                 <input type="email" name="email" class="trial-form__input trial-form__input--email"
-                    placeholder="Company email *" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" />
+                    placeholder="Company email *" required />
                 <select name="users" class="trial-form__select trial-form__select--users" required>
                     <option value="">Number of users</option>
                     <option value="1">1</option>
@@ -76,8 +76,7 @@
                 </select>
                 <div class="trial-form__input__group trial-form__input__group--password">
                     <input type="password" name="password" class="trial-form__input trial-form__input--password"
-                        placeholder="Password *" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$"
-                        aria-describedby="passwordHelp" />
+                        placeholder="Password *" required aria-describedby="passwordHelp" />
                     <small class="trial-form__password-help" id="passwordHelp">Password must contain 1 small letter, 1
                         capital letter, 1 number.</small>
                 </div>
@@ -114,9 +113,9 @@
                     </li>
                 </ul>
 
-                <input type="tel" name="phone" class="trial-form__input phone-input__number" placeholder="+1684"
-                    required pattern="[0-9]+" minlength="6" />
-                <input type="hidden" name="country_code" class="phone-input__hidden" value="+1684" required />
+                <input type="tel" name="phone" class="trial-form__input phone-input__number" placeholder="+420" required
+                    minlength="6" />
+                <input type="hidden" name="country_code" class="phone-input__hidden" value="+420" required />
             </div>
 
             <label class="trial-form__checkbox">

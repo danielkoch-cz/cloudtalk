@@ -156,13 +156,7 @@ body {
     list-style-type: none;
     justify-content: center;
     color: var(--color-text-secondary);
-    font-size: 12px;
-}
-
-@media screen and (min-width: 990px) {
-    .trial-form__benefits {
-        font-size: 14px;
-    }
+    font-size: clamp(10px, calc(10px + (14 - 10) * ((100vw - 320px) / (990 - 320))), 14px);
 }
 
 .trial-form__benefits li {
@@ -521,6 +515,7 @@ body {
     transition: background-color 0.3s ease;
     width: 100%;
     margin-top: 12px;
+    transition: all 0.3s ease;
 }
 
 .trial-form__button:hover {

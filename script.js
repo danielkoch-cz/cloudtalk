@@ -237,5 +237,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // If form is valid, proceed with submission
     const formData = new FormData(form);
     console.log(Object.fromEntries(formData));
+
+    alert("Form submitted successfully, data sent to console.");
   });
 });
