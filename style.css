@@ -347,6 +347,10 @@ body {
     margin-bottom: 4px; 
 }
 
+
+
+/* Phone Input */
+
 .phone-input {
     position: relative;
     display: flex;
@@ -415,4 +419,8 @@ body {
   
   .phone-input__number {
     padding: 0.75rem;
+  }
+
+  .phone-input__option--highlighted {
+    background-color: #e5eeff;
   }
