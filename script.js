@@ -1,4 +1,7 @@
-// Tab order management
+/**
+ * Manages the tab order of the form fields based on screen size (mobile/desktop).
+ * Sets the tabIndex for each relevant input/select/trigger.
+ */
 function updateFormTabOrder() {
   const isMobile = window.innerWidth < 990;
   const elements = {
@@ -30,7 +33,15 @@ function updateFormTabOrder() {
   }
 }
 
+/**
+ * CountrySelect class
+ * Handles custom dropdown for country selection in phone input.
+ * Supports keyboard navigation, type-ahead search, ARIA accessibility, and mouse interaction.
+ */
 class CountrySelect {
+  /**
+   * @param {HTMLElement} container - The root element for the phone input instance.
+   */
   constructor(container) {
     this.container = container;
     this.trigger = container.querySelector(".phone-input__country");
@@ -55,6 +66,9 @@ class CountrySelect {
     this.bindEvents();
   }
 
+  /**
+   * Binds all event listeners for the dropdown and its options.
+   */
   bindEvents() {
     this.trigger.addEventListener("click", () => this.toggleDropdown());
 
@@ -155,6 +169,10 @@ class CountrySelect {
     });
   }
 
+  /**
+   * Handles type-ahead search for dropdown options.
+   * @param {string} key - The character typed by the user.
+   */
   handleSearch(key) {
     // Clear previous timeout
     if (this.searchTimeout) {
@@ -183,14 +201,24 @@ class CountrySelect {
     }, 1000);
   }
 
+  /**
+   * Checks if the dropdown is currently open.
+   * @returns {boolean}
+   */
   isOpen() {
     return this.trigger.getAttribute("aria-expanded") === "true";
   }
 
+  /**
+   * Toggles the dropdown open/closed.
+   */
   toggleDropdown() {
     this.isOpen() ? this.closeDropdown() : this.openDropdown();
   }
 
+  /**
+   * Opens the dropdown and highlights the current selection.
+   */
   openDropdown() {
     this.trigger.setAttribute("aria-expanded", "true");
     this.dropdown.hidden = false;
@@ -209,6 +237,9 @@ class CountrySelect {
     );
   }
 
+  /**
+   * Closes the dropdown and resets highlight/search.
+   */
   closeDropdown() {
     this.trigger.setAttribute("aria-expanded", "false");
     this.dropdown.hidden = true;
@@ -220,6 +251,10 @@ class CountrySelect {
     }
   }
 
+  /**
+   * Selects an option, updates the UI, and closes the dropdown.
+   * @param {HTMLElement} option - The option element to select.
+   */
   selectOption(option) {
     const label = option.dataset.label;
     const code = option.dataset.code;
@@ -235,6 +270,10 @@ class CountrySelect {
     this.trigger.focus();
   }
 
+  /**
+   * Moves the highlight up or down in the dropdown options.
+   * @param {number} direction - 1 for down, -1 for up.
+   */
   moveHighlight(direction) {
     this.clearHighlight();
 
@@ -248,6 +287,9 @@ class CountrySelect {
     option.focus();
   }
 
+  /**
+   * Removes highlight from all options.
+   */
   clearHighlight() {
     this.options.forEach((opt) =>
       opt.classList.remove("phone-input__option--highlighted")
