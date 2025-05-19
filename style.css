@@ -109,6 +109,8 @@ body {
         "grid";
     color: var(--color-text-tertiary);
     position: relative;
+    width: 100%;
+    max-width: 500px;
 }
 
 @media screen and (min-width: 990px) {
@@ -117,12 +119,13 @@ body {
             "gif"
             "header"
             "grid";
-        max-width: 500px;
+       
         background: var(--color-bg);
         border-radius: var(--radius);
         box-shadow: var(--shadow-xs);
         border: 1px solid var(--color-border);
         padding: 0;
+        margin-top: 74px;
     }
 }
 
