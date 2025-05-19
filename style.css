@@ -338,7 +338,12 @@ body {
 }
 
 .trial-form__input__group .trial-form__input {
-    margin-bottom: 4px; 
+    margin-bottom: 8px; 
+}
+
+.trial-form__input__group small {
+    display: inline-block;
+    line-height: 1.4em;
 }
 
 .trial-form__columns {
@@ -461,13 +466,12 @@ body {
 
   .link {
     color: var(--color-primary);
-    text-decoration: underline;
   }
   
   .trial-form__checkbox {
-    display: flex;
-    align-items: center;
-    gap: 8px;
+   display: flex;
+   align-items: flex-start;
+   gap: 8px;
   }
   
   .trial-form__checkbox input[type="checkbox"] {
@@ -484,6 +488,8 @@ body {
     outline: none;
     background-color: #fff;
     transition: all 0.2s ease;
+    flex-shrink: 0;
+    top: 2px;
   }
   
   .trial-form__checkbox input[type="checkbox"]:checked {
@@ -508,3 +514,19 @@ body {
     border-color: var(--color-primary);
   }
   
+.trial-form__button {
+    background-color: var(--color-primary);
+    color: var(--color-text-white);
+    border: none;
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-family: var(--font-base);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    margin-top: 12px;
+}
+
+.trial-form__button:hover {
+    background-color: var(--color-primary-dark);
+}

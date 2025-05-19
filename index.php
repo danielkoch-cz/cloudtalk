@@ -116,7 +116,9 @@
 
             <label class="trial-form__checkbox">
                 <input type="checkbox" required />
-                I have read and agree to the <a href="#" class="link">Terms and Conditions</a>
+                <span>
+                    I have read and agree to the <a href="#" class="link">Terms and Conditions</a>
+                </span>
             </label>
 
             <button type="submit" class="trial-form__button">Start a free trial</button>
