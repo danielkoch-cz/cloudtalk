@@ -409,7 +409,7 @@ body {
     display: grid;
     grid-template-columns: 102px 1fr;
     align-items: self-start;
-    gap: 12px;
+    gap: 0 12px;
     position: relative;
   }
   
