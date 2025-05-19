@@ -44,6 +44,8 @@ class CountrySelect {
     );
 
     this.highlightedIndex = -1;
+    this.searchString = "";
+    this.searchTimeout = null;
 
     // Set initial tabindex for options
     this.options.forEach((option, index) => {
@@ -83,6 +85,12 @@ class CountrySelect {
           e.preventDefault();
           this.closeDropdown();
           break;
+        default:
+          // Handle type-ahead search
+          if (this.isOpen() && e.key.length === 1) {
+            e.preventDefault();
+            this.handleSearch(e.key);
+          }
       }
     });
 
@@ -111,6 +119,12 @@ class CountrySelect {
         case "Tab":
           this.closeDropdown();
           break;
+        default:
+          // Handle type-ahead search
+          if (e.key.length === 1) {
+            e.preventDefault();
+            this.handleSearch(e.key);
+          }
       }
     });
 
@@ -139,6 +153,34 @@ class CountrySelect {
         this.closeDropdown();
       }
     });
+  }
+
+  handleSearch(key) {
+    // Clear previous timeout
+    if (this.searchTimeout) {
+      clearTimeout(this.searchTimeout);
+    }
+
+    // Add character to search string
+    this.searchString += key.toLowerCase();
+    // Find matching option
+    const matchingOption = this.options.find((option) => {
+      const text = option.textContent.toLowerCase().trim();
+      return text.startsWith(this.searchString);
+    });
+
+    if (matchingOption) {
+      const index = this.options.indexOf(matchingOption);
+      this.highlightedIndex = index;
+      this.clearHighlight();
+      matchingOption.classList.add("phone-input__option--highlighted");
+      matchingOption.focus();
+    }
+
+    // Reset search string after 1 second of inactivity
+    this.searchTimeout = setTimeout(() => {
+      this.searchString = "";
+    }, 1000);
   }
 
   isOpen() {
@@ -172,6 +214,10 @@ class CountrySelect {
     this.dropdown.hidden = true;
     this.clearHighlight();
     this.highlightedIndex = -1;
+    this.searchString = "";
+    if (this.searchTimeout) {
+      clearTimeout(this.searchTimeout);
+    }
   }
 
   selectOption(option) {
