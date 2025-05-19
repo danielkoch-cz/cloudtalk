@@ -331,14 +331,6 @@ body {
     margin-bottom: 12px;
 }
 
-@media screen and (min-width: 990px) {
-    .trial-form__column {
-       display: grid;
-       grid-template-columns: 1fr 1fr;
-       gap: 16px;
-    }
-}
-
 .trial-form__input__group {
     margin-bottom: 8px;
 }
@@ -347,6 +339,37 @@ body {
     margin-bottom: 4px; 
 }
 
+@media screen and (min-width: 990px) {
+    .trial-form__columns {
+        display: grid;
+        grid-template-areas:
+            "first-name last-name"
+            "email users"
+            "password password";
+        grid-template-columns: 1fr 1fr;
+        gap: 0 16px;
+    }
+
+    .trial-form__input--first-name {
+        grid-area: first-name;
+    }
+
+    .trial-form__input--last-name {
+        grid-area: last-name;
+    }
+    
+    .trial-form__input--email {
+        grid-area: email;
+    }
+
+    .trial-form__input__group--password {
+        grid-area: password;
+    }
+
+    .trial-form__select--users {
+        grid-area: users;
+    }
+}
 
 
 /* Phone Input */
