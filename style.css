@@ -408,7 +408,6 @@ body {
     border-radius: 8px;
     background: #fff;
     cursor: pointer;
-    font-size: 0.95rem;
   }
   
   .phone-input__flag {
@@ -456,10 +455,6 @@ body {
   .phone-input__option:focus {
     background-color: #f0f4ff;
     outline: none;
-  }
-  
-  .phone-input__number {
-    padding: 0.75rem;
   }
 
   .phone-input__option--highlighted {
