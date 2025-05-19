@@ -1,64 +1,64 @@
 class CountrySelect {
-  constructor(containerSelector) {
-    this.container = document.querySelector(containerSelector);
-    if (!this.container) return;
+  constructor(container) {
+    this.container = container;
+    this.trigger = container.querySelector(".phone-input__country");
+    this.dropdown = container.querySelector(".phone-input__dropdown");
+    this.label = container.querySelector(".phone-input__label");
+    this.flag = this.trigger.querySelector("img");
+    this.phoneInput = container.querySelector(".phone-input__number");
+    this.hiddenInput = container.querySelector(".phone-input__hidden");
+    this.options = container.querySelectorAll(".phone-input__option");
 
-    this.trigger = this.container.querySelector(".phone-input__country");
-    this.dropdown = this.container.querySelector(".phone-input__dropdown");
-    this.selectedText = this.container.querySelector(
-      ".phone-input__selected-text"
-    );
-    this.selectedFlag = this.trigger.querySelector("img");
-
-    this.init();
-  }
-
-  init() {
     this.bindEvents();
   }
 
   bindEvents() {
-    // Toggle dropdown on trigger click
-    this.trigger.addEventListener("click", () => {
-      const expanded = this.trigger.getAttribute("aria-expanded") === "true";
-      this.trigger.setAttribute("aria-expanded", String(!expanded));
-      this.dropdown.hidden = expanded;
+    this.trigger.addEventListener("click", () => this.toggleDropdown());
+
+    this.options.forEach((option) => {
+      option.addEventListener("click", () => this.selectOption(option));
     });
 
-    // Handle dropdown item selection
-    this.dropdown.addEventListener("click", (e) => {
-      const option = e.target.closest(".phone-input__option");
-      if (option) this.selectOption(option);
-    });
-
-    // Close dropdown on outside click
     document.addEventListener("click", (e) => {
       if (!this.container.contains(e.target)) {
         this.closeDropdown();
       }
     });
+
+    this.container.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") this.closeDropdown();
+    });
+  }
+
+  toggleDropdown() {
+    const expanded = this.trigger.getAttribute("aria-expanded") === "true";
+    this.trigger.setAttribute("aria-expanded", String(!expanded));
+    this.dropdown.hidden = expanded;
   }
 
   selectOption(option) {
+    const label = option.dataset.label;
+    const code = option.dataset.code;
     const flag = option.querySelector("img");
-    this.selectedText.textContent = option.textContent.trim();
-    this.selectedFlag.src = flag.src;
-    this.selectedFlag.alt = flag.alt;
+
+    this.label.textContent = label;
+    this.flag.src = flag.src;
+    this.flag.alt = flag.alt;
+    this.phoneInput.placeholder = code;
+    this.hiddenInput.value = code;
 
     this.closeDropdown();
   }
 
   closeDropdown() {
-    this.dropdown.hidden = true;
     this.trigger.setAttribute("aria-expanded", "false");
+    this.dropdown.hidden = true;
   }
 }
 
-// Initialize all instances on the page
+// Initialize all instances
 document.addEventListener("DOMContentLoaded", () => {
-  const selectors = document.querySelectorAll(".phone-input");
-  selectors.forEach((el, i) => {
-    el.classList.add(`phone-input--instance-${i}`);
-    new CountrySelect(`.phone-input--instance-${i}`);
+  document.querySelectorAll(".phone-input").forEach((container) => {
+    new CountrySelect(container);
   });
 });

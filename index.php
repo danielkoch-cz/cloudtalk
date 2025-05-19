@@ -81,26 +81,38 @@
                     <option value="10+">10+</option>
                 </select>
             </div>
-            <div class="phone-input">
+            <div class="phone-input phone-input--instance-0">
                 <div class="phone-input__country" tabindex="0" role="combobox" aria-haspopup="listbox"
-                    aria-expanded="false">
-                    <img src="flags/cz.svg" alt="Czech flag" class="phone-input__flag" />
-                    <span class="phone-input__selected-text">CZ</span>
+                    aria-expanded="false" aria-controls="phone-dropdown-0">
+                    <img src="flags/as.svg" alt="American Samoa flag" class="phone-input__flag" />
+                    <span class="phone-input__label">AS</span>
+                    <span class="phone-input__arrow">▾</span>
                 </div>
-                <ul class="phone-input__dropdown" role="listbox" hidden>
-                    <li class="phone-input__option" role="option" tabindex="0">
-                        <img src="flags/cz.svg" alt="Czech flag" class="phone-input__flag" /> Czech Republic
+
+                <ul class="phone-input__dropdown" id="phone-dropdown-0" role="listbox" hidden>
+                    <li class="phone-input__option" data-code="+93" data-label="AF" tabindex="0" role="option">
+                        <img src="flags/af.svg" alt="Afghanistan flag" class="phone-input__flag" />
+                        Afghanistan (+93)
                     </li>
-                    <li class="phone-input__option" role="option" tabindex="0">
-                        <img src="flags/us.svg" alt="US flag" class="phone-input__flag" /> United States
+                    <li class="phone-input__option" data-code="+355" data-label="AL" tabindex="0" role="option">
+                        <img src="flags/al.svg" alt="Albania flag" class="phone-input__flag" />
+                        Albania (+355)
                     </li>
-                    <li class="phone-input__option" role="option" tabindex="0">
-                        <img src="flags/de.svg" alt="German flag" class="phone-input__flag" /> Germany
+                    <li class="phone-input__option" data-code="+213" data-label="DZ" tabindex="0" role="option">
+                        <img src="flags/dz.svg" alt="Algeria flag" class="phone-input__flag" />
+                        Algeria (+213)
+                    </li>
+                    <li class="phone-input__option" data-code="+1684" data-label="AS" tabindex="0" role="option">
+                        <img src="flags/as.svg" alt="American Samoa flag" class="phone-input__flag" />
+                        American Samoa (+1684)
                     </li>
                 </ul>
-                <input type="tel" name="phone" class="trial-form__input"
-                    placeholder="Phone number, e.g. +1 888-487-1675" required />
+
+                <input type="tel" name="phone" class="trial-form__input phone-input__number" placeholder="+1684"
+                    required />
+                <input type="hidden" name="country_code" class="phone-input__hidden" value="+1684" />
             </div>
+
 
             <label class="trial-form__checkbox">
                 <input type="checkbox" required />
