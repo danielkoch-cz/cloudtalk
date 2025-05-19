@@ -61,25 +61,26 @@
                 src="https://www.cloudtalk.io/wp-content/uploads/2024/10/video-wave-celia-bruche.mp4"></video>
         </div>
         <div class="trial-form__grid">
-            <div class="trial-form__column">
-                <input type="text" name="firstName" class="trial-form__input" placeholder="First name *" required />
-                <input type="text" name="lastName" class="trial-form__input" placeholder="Last name *" required />
+            <div class="trial-columns">
+                <input type="text" name="firstName" class="trial-form__input trial-form__input--first-name"
+                    placeholder="First name *" required />
+                <input type="text" name="lastName" class="trial-form__input trial-form__input--last-name"
+                    placeholder="Last name *" required />
+                <input type="email" name="email" class="trial-form__input trial-form__input--email"
+                    placeholder="Company email *" required />
+                <div class="trial-form__input__group">
+                    <input type="password" name="password" class="trial-form__input trial-form__input--password"
+                        placeholder="Password *" required aria-describedby="passwordHelp" />
+                    <small class="trial-form__password-help" id="passwordHelp">Password must contain 1 small letter, 1
+                        capital letter, 1 number.</small>
+                </div>
+                <select name="users" class="trial-form__select trial-form__select--users" required>
+                    <option value="">Number of users</option>
+                    <option value="1">1</option>
+                    <option value="2-10">2–10</option>
+                    <option value="10+">10+</option>
+                </select>
             </div>
-            <div class="trial-form__column">
-                <input type="email" name="email" class="trial-form__input" placeholder="Company email *" required />
-                <input type="password" name="password" class="trial-form__input" placeholder="Password *" required
-                    aria-describedby="passwordHelp" />
-            </div>
-            <small class="trial-form__password-help">Password must contain 1 small letter, 1 capital letter, 1
-                number.</small>
-
-            <select name="users" class="trial-form__select" required>
-                <option value="">Number of users</option>
-                <option value="1">1</option>
-                <option value="2-10">2–10</option>
-                <option value="10+">10+</option>
-            </select>
-
             <div class="phone-input">
                 <div class="phone-input__country" tabindex="0" role="combobox" aria-haspopup="listbox"
                     aria-expanded="false">

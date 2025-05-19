@@ -308,6 +308,7 @@ body {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
+    margin-bottom: 12px;
 }
 
 .trial-form__select:focus {
@@ -325,4 +326,12 @@ body {
        grid-template-columns: 1fr 1fr;
        gap: 16px;
     }
+}
+
+.trial-form__input__group {
+    margin-bottom: 8px;
+}
+
+.trial-form__input__group .trial-form__input {
+    margin-bottom: 4px; 
 }
