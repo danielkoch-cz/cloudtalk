@@ -418,6 +418,7 @@ body {
     border-radius: 8px;
     background: #fff;
     cursor: pointer;
+    min-height: 45px;
   }
 
   .phone-input__country:focus-within {
@@ -479,6 +480,10 @@ body {
 
   .phone-input__option--highlighted {
     background-color: #e5eeff;
+  }
+
+  .phone-input input {
+    min-height: 45px;
   }
 
   .link {
