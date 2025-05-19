@@ -101,7 +101,7 @@ body {
 }
 
 .trial-form {
-    padding: 32px 16;
+    padding: 32px 16px;
     display: grid;
     grid-template-areas:
         "header"
