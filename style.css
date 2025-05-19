@@ -387,11 +387,10 @@ body {
 /* Phone Input */
 
 .phone-input {
-    position: relative;
-    display: flex;
-    grid-column: span 2;
-    gap: 0.5rem;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 102px 1fr;
+    align-items: self-start;
+    gap: 12px;
   }
   
   .phone-input__country {
@@ -459,3 +458,53 @@ body {
   .phone-input__option--highlighted {
     background-color: #e5eeff;
   }
+
+  .link {
+    color: var(--color-primary);
+    text-decoration: underline;
+  }
+  
+  .trial-form__checkbox {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .trial-form__checkbox input[type="checkbox"] {
+    /* Hide the native box but keep accessibility */
+    appearance: none;
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    border: 1px solid var(--color-border);
+    border-radius: 4px; 
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    outline: none;
+    background-color: #fff;
+    transition: all 0.2s ease;
+  }
+  
+  .trial-form__checkbox input[type="checkbox"]:checked {
+    border-color: var(--color-primary);
+    background-color: var(--color-primary);
+  }
+  
+  .trial-form__checkbox input[type="checkbox"]:checked::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 5px;
+    width: 2px;
+    height: 6px;
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+  
+  .trial-form__checkbox input[type="checkbox"]:focus-visible {
+    outline: none;
+    border-color: var(--color-primary);
+  }
+  
