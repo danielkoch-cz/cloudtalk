@@ -419,6 +419,11 @@ body {
     background: #fff;
     cursor: pointer;
   }
+
+  .phone-input__country:focus-within {
+    outline: 1px solid var(--color-primary);
+    border-color: var(--color-primary);
+  }
   
   .phone-input__flag {
     width: 20px;

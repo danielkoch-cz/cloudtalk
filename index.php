@@ -103,16 +103,18 @@
                     <input type="password" id="password" name="password"
                         class="trial-form__input trial-form__input--password" placeholder="Password *" required
                         aria-required="true" aria-invalid="false" aria-describedby="passwordHelp password-error" />
-                    <small class="trial-form__password-help" id="passwordHelp">Password must contain 1 small letter, 1
-                        capital letter, 1 number.</small>
+                    <small class="trial-form__password-help" id="passwordHelp">Password must contain 1&nbsp;small
+                        letter, 1&nbsp;capital letter, 1&nbsp;number.</small>
                     <div class="trial-form__error" id="password-error" role="alert" aria-live="polite"></div>
                 </div>
             </div>
 
             <div class="phone-input phone-input--instance-0">
                 <label for="phone" class="trial-form__label">Phone number</label>
-                <div class="phone-input__country" tabindex="0" role="combobox" aria-haspopup="listbox" aria-expanded="false" aria-controls="phone-dropdown-0" aria-label="Select country code">
-                    <img src="http://danielkoch.cz/wp-content/uploads/2025/05/czech-republic.svg" alt="Czech Republic flag" class="phone-input__flag" />
+                <div class="phone-input__country" tabindex="0" role="combobox" aria-haspopup="listbox"
+                    aria-expanded="false" aria-controls="phone-dropdown-0" aria-label="Select country code">
+                    <img src="http://danielkoch.cz/wp-content/uploads/2025/05/czech-republic.svg"
+                        alt="Czech Republic flag" class="phone-input__flag" />
                     <span class="phone-input__label">CZ</span>
                     <span class="phone-input__arrow" aria-hidden="true"></span>
                 </div>
