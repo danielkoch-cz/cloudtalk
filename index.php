@@ -92,11 +92,6 @@
 
             <button type="submit" class="trial-form__button">Start a free trial</button>
         </div>
-
-        <p class="trial-form__disclaimer">
-            By starting a free trial, you acknowledge that CloudTalk will process your personal data based on legitimate
-            interest. <a href="#">Privacy Notice</a>.
-        </p>
     </form>
 </main>
 
