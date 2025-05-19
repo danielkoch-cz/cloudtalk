@@ -487,7 +487,7 @@ body {
     outline: none;
   }
 
-  .phone-input__option--highlighted {
+  .phone-input__option--highlighted, .phone-input__option:hover {
     background-color: #e5eeff;
   }
 
