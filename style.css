@@ -15,6 +15,7 @@ Version: 1.0
 
 :root {
     --color-primary: #0420D5;
+    --color-primary-hover: #031AAA;
     --color-bg: #FFFFFF;
     --color-border: #D5D7DA;
     --color-bg-primary: #0420D5;
@@ -552,6 +553,7 @@ body {
   }
   
 .trial-form__button {
+    font-weight: 600;
     background-color: var(--color-primary);
     color: var(--color-text-white);
     border: none;
@@ -563,10 +565,17 @@ body {
     width: 100%;
     margin-top: 12px;
     transition: all 0.3s ease;
+    border: 2px solid;
+    border-image-source: linear-gradient(180deg, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0) 100%);
+    box-shadow: 0px 1px 2px 0px #0A0D120D;
+    box-shadow: 0px -2px 0px 0px #0A0D120D inset;
+    box-shadow: 0px 0px 0px 1px #0A0D122E inset;    
+    cursor: pointer;
+    font-size: 18px;
 }
 
 .trial-form__button:hover {
-    opacity: 0.8;
+    background-color: var(--color-primary-hover);
 }
 
 /* Silka Font Family */
