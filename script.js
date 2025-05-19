@@ -1,3 +1,35 @@
+// Tab order management
+function updateFormTabOrder() {
+  const isMobile = window.innerWidth < 990;
+  const elements = {
+    firstName: document.querySelector(".trial-form__input--first-name"),
+    lastName: document.querySelector(".trial-form__input--last-name"),
+    email: document.querySelector(".trial-form__input--email"),
+    password: document.querySelector(".trial-form__input--password"),
+    users: document.querySelector(".trial-form__select--users"),
+    phone: document.querySelector(".phone-input__country"),
+  };
+
+  // Mobile order: firstName -> lastName -> email -> password -> users -> phone
+  if (isMobile) {
+    elements.firstName.tabIndex = 1;
+    elements.lastName.tabIndex = 2;
+    elements.email.tabIndex = 3;
+    elements.password.tabIndex = 4;
+    elements.users.tabIndex = 5;
+    elements.phone.tabIndex = 6;
+  }
+  // Desktop order: firstName -> lastName -> email -> users -> password -> phone
+  else {
+    elements.firstName.tabIndex = 1;
+    elements.lastName.tabIndex = 2;
+    elements.email.tabIndex = 3;
+    elements.users.tabIndex = 4;
+    elements.password.tabIndex = 5;
+    elements.phone.tabIndex = 6;
+  }
+}
+
 class CountrySelect {
   constructor(container) {
     this.container = container;
@@ -124,8 +156,16 @@ class CountrySelect {
   }
 }
 
+// Initialize all instances
 document.addEventListener("DOMContentLoaded", () => {
+  // Initialize country select
   document.querySelectorAll(".phone-input").forEach((container) => {
     new CountrySelect(container);
   });
+
+  // Set initial tab order
+  updateFormTabOrder();
+
+  // Update tab order on window resize
+  window.addEventListener("resize", updateFormTabOrder);
 });
