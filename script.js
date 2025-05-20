@@ -327,5 +327,7 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log(Object.fromEntries(formData));
 
     alert("Form submitted successfully, data sent to console.");
+
+    form.reset();
   });
 });
