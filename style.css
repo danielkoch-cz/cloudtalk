@@ -597,39 +597,39 @@ body {
 
 /* Silka Font Family */
 @font-face {
-  font-family: 'Silka';
-  src: url('fonts/silka/Silka-Regular.otf') format('opentype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Silka';
-  src: url('fonts/silka/Silka-Medium.otf') format('opentype');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Silka';
-  src: url('fonts/silka/Silka-SemiBold.otf') format('opentype');
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Silka';
-  src: url('fonts/silka/Silka-Bold.otf') format('opentype');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-/* GT Pressura Extended Medium */
-@font-face {
-  font-family: 'GT-Pressura-Extended';
-  src: url('fonts/pressura/GT-Pressura-Extended-Medium.otf') format('opentype');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
+    font-family: 'Silka';
+    src: url('https://danielkoch.cz/wp-content/uploads/cloudtalk/silka/Silka-Regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Silka';
+    src: url('https://danielkoch.cz/wp-content/uploads/cloudtalk/silka/Silka-Medium.otf') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Silka';
+    src: url('https://danielkoch.cz/wp-content/uploads/cloudtalk/silka/Silka-SemiBold.otf') format('opentype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Silka';
+    src: url('https://danielkoch.cz/wp-content/uploads/cloudtalk/silka/Silka-Bold.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  /* GT Pressura Extended Medium */
+  @font-face {
+    font-family: 'GT-Pressura-Extended';
+    src: url('https://danielkoch.cz/wp-content/uploads/cloudtalk/pressura/GT-Pressura-Extended-Medium.otf') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
